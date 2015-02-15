@@ -13,7 +13,8 @@ io.on('connection', function(socket) {
   io.emit('chat message', 'User connected');
 
   socket.on('chat message', function(msg) {
-    io.emit('chat message', msg);
+    socket.broadcast.emit('chat message', msg);
+    socket.emit('message success', msg);
   });
 
   socket.on('disconnect', function() {

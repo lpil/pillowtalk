@@ -4,20 +4,31 @@
       msgs   = document.querySelector('.msgs'),
       socket = io(),
       sendCB,
-      receiveCB;
+      receiveCB,
+      successCB,
+      printMsg;
+
+  printMsg = function printMsg(handle, msg) {
+    var ele = document.createElement('ul');
+    ele.innerText = handle + ': ' + msg;
+    msgs.appendChild(ele);
+  };
 
   sendCB = function() {
-    socket.emit('chat message', input.value);
+    var msg = input.value;
+    socket.emit('chat message', msg);
+    printMsg('You', msg);
     input.value = '';
     event.preventDefault();
   };
 
-  receiveCB = function(msg) {
-    var ele = document.createElement('ul');
-    ele.innerText = msg;
-    msgs.appendChild(ele);
+  receiveCB = function(msg) { printMsg('Them', msg); };
+
+  successCB = function(msg) {
+    console.log('Message successfully sent: '+ msg);
   };
 
   form.addEventListener('submit', sendCB, false);
   socket.addEventListener('chat message', receiveCB, false);
+  socket.addEventListener('message success', successCB, false);
 }());
