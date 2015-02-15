@@ -26,17 +26,8 @@ module.exports = function(grunt) {
       },
       app: [
         '**/*.js',
-        '!client/**',
         '!node_modules/**'
-      ],
-      client: {
-        options: {
-          browser: true
-        },
-        files: {
-          src: ['client/**/*.js']
-        }
-      },
+      ]
     }
   });
 
