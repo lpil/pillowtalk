@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   var form   = document.querySelector('.form'),
       input  = form.querySelector('.msg'),
       msgs   = document.querySelector('.msgs'),
@@ -6,7 +8,6 @@
       sendMessage,
       receiveMessage,
       receiveAlert,
-      successCB,
       printMsg;
 
   printMsg = function printMsg(msg) {
