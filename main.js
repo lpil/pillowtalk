@@ -15,7 +15,7 @@ io.of('/pillowTalk')
 
   socket.on('message', function(msg, successCB) {
     socket.broadcast.emit('message', msg);
-    successCB();
+    if (successCB) { successCB(); }
   });
 
   socket.on('disconnect', function() {
@@ -23,6 +23,6 @@ io.of('/pillowTalk')
   });
 });
 
-http.listen(3000, function(){
+http.listen(3000, function() {
   console.log('listening on *:3000');
 });
