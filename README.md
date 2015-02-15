@@ -9,6 +9,6 @@ One to one chat using [express.js](https://github.com/strongloop/express/) and
 ## Tests
 
 ```bash
-npm-install -g karma-cli
-npm test
+npm-install -g grunt-cli
+grunt
 ```
