@@ -6,6 +6,14 @@
 One to one chat using [express.js](https://github.com/strongloop/express/) and
 [sockets.io](https://github.com/Automattic/ocket.io/).
 
+
+## Automatic code reloading
+
+```bash
+npm install -g nodemon
+nodenom main.js
+```
+
 ## Tests
 
 ```bash
