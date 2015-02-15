@@ -9,16 +9,17 @@ app.get('/main.js', function(req, res){
   res.sendFile(__dirname + '/client/main.js');
 });
 
-io.on('connection', function(socket) {
-  io.emit('chat message', 'User connected');
+io.of('/pillowTalk')
+  .on('connection', function(socket) {
+  io.emit('alert', 'User connected');
 
-  socket.on('chat message', function(msg) {
-    socket.broadcast.emit('chat message', msg);
-    socket.emit('message success', msg);
+  socket.on('message', function(msg, successCB) {
+    socket.broadcast.emit('message', msg);
+    successCB();
   });
 
   socket.on('disconnect', function() {
-    io.emit('chat message', 'User disconnected');
+    io.emit('alert', 'User disconnected');
   });
 });
 
