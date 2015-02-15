@@ -13,7 +13,7 @@ app.get('/main.js', function(req, res){
 
 io.of('/pillowTalk')
   .on('connection', function(socket) {
-  io.emit('alert', 'User connected');
+  io.emit('alert', 'User connected: ' + socket.id);
 
   socket.on('message', function(msg, successCB) {
     socket.broadcast.emit('message', msg);
