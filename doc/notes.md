@@ -10,7 +10,11 @@
 
 [Directing emits](https://github.com/Automattic/socket.io/wiki/How-do-I-send-a-response-to-all-clients-except-sender%3F)
 
-### Testing
+## Database
+
+[Sequalize](http://sequelizejs.com/)
+
+## Testing
 
 [Unit Testing Socket.IO with Jasmine](http://www.joezimjs.com/javascript/unit-testing-socket-io-with-jasmine/)
 
