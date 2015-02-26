@@ -1,4 +1,4 @@
-# Pillowtalk
+# Pillowtalk.js
 
 [![Build Status](https://travis-ci.org/lpil/pillowtalk.svg?branch=master)](https://travis-ci.org/lpil/pillowtalk)
 [![Code Climate](https://codeclimate.com/github/lpil/pillowtalk/badges/gpa.svg)](https://codeclimate.com/github/lpil/pillowtalk)
